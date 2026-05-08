@@ -1,26 +1,102 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-bg: #09090b;
+  --color-surface: #111113;
+  --color-surface-raised: #18181b;
+  --color-border: #27272a;
+  --color-border-subtle: #1f1f22;
+  --color-text: #fafafa;
+  --color-text-muted: #a1a1aa;
+  --color-text-subtle: #52525b;
+  --color-accent: #e4e4e7;
+  --font-sans: 'Inter', system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
+    data-scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #09090b;
+    color: #fafafa;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: #3f3f46;
+    color: #fafafa;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #111113;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 3px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .surface {
+    background-color: #111113;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+  }
+
+  .surface-raised {
+    background-color: #18181b;
+    border: 1px solid #27272a;
+    border-radius: 8px;
+  }
+
+  .text-muted {
+    color: #a1a1aa;
+  }
+
+  .text-subtle {
+    color: #52525b;
+  }
+
+  .badge-verified {
+    background-color: #052e16;
+    color: #4ade80;
+    border: 1px solid #14532d;
+  }
+
+  .badge-outdated {
+    background-color: #1c1003;
+    color: #facc15;
+    border: 1px solid #713f12;
+  }
+
+  .badge-inaccurate {
+    background-color: #1c0a03;
+    color: #fb923c;
+    border: 1px solid #7c2d12;
+  }
+
+  .badge-false {
+    background-color: #1c0303;
+    color: #f87171;
+    border: 1px solid #7f1d1d;
+  }
+
+  .divide-surface > * + * {
+    border-top: 1px solid #27272a;
+  }
 }
