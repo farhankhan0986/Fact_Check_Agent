@@ -187,4 +187,7 @@ MIT
 ## Author
 
 **Farhan Khan**
+
+E-mail → farhankhan080304@gmail.com
+
 GitHub → [github.com/farhankhan0986](https://github.com/farhankhan0986)
